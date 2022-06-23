@@ -13,25 +13,25 @@ var users = [
     traineeEmail: 'trainee121@successive.tech',
     reviewerEmail: 'reviewer101@successive.tech',
   }
-  ];
+];
 
-  let regex = /^([A-Za-z0-9_\-\.])+\@(successive.tech)$/;
+let regex = /^([A-Za-z0-9_\-\.])+\@(successive.tech)$/;
 
 // Function to validate email address
-  let validateEmail = (email) => {
-    if (regex.test(email)){
-      return true;
-    }
-    else {
-      return false;
-    }
-  };
+let validateEmail = (email) => {
+  if (regex.test(email)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+};
 
 // Function to validate Users in the above given array of objects.
 function validateUsers() {
   var invalid = 0, valid = 0;
   users.map((x) => {
-    if(validateEmail(x.traineeEmail) && validateEmail(x.reviewerEmail) == true){
+    if (validateEmail(x.traineeEmail) && validateEmail(x.reviewerEmail) == true) {
       console.log("Trainee Email is " + x.traineeEmail);
       console.log("Reviewer Email is " + x.reviewerEmail);
       valid++;
