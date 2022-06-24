@@ -8,10 +8,9 @@ const permission = {
     delete: [],
   },
 };
-let output1;
 
 function hasPermission(moduleName, role, permissionType) {
-  if (output1 = moduleName in permission) {
+  if (moduleName in permission) {
     if ((permission[moduleName].all.includes(role)) || (permission[moduleName][permissionType].includes(role))) {
       console.log('True');
     } else {
