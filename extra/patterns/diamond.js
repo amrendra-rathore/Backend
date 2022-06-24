@@ -2,7 +2,7 @@
 var arg = process.argv
 
 let string = "";
-function Diamond(size) {
+export default function Diamond(size) {
   if (size >= 2 && size <= 10) {  // Condition to check if the input argument is within the range.
     for (let i = 1; i <= size; i++) {
       for (let j = 1; j <= size - i; j++) {
@@ -26,4 +26,3 @@ function Diamond(size) {
     console.log(string);
   } else console.log("Invalid Input, Please enter an integer between 2 and 10");
 }
-Diamond(arg[2]);

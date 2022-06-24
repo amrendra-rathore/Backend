@@ -1,15 +1,7 @@
-var arg = process.argv;
+import {permission} from "./constants.js";
+// var arg = process.argv;
 
-const permission = {
-  'getUsers': {
-    all: ['head-trainer'],
-    read: ['trainee', 'trainer'],
-    write: ['trainer'],
-    delete: [],
-  },
-};
-
-function hasPermission(moduleName, role, permissionType) {
+export default function hasPermission(moduleName, role, permissionType) {
 
   if ((permission[moduleName].all.includes(role)) || (permission[moduleName][permissionType].includes(role))) {
     console.log('True');
@@ -18,4 +10,4 @@ function hasPermission(moduleName, role, permissionType) {
   }
 }
 
-hasPermission(arg[2], arg[3], arg[4]);
+// hasPermission(arg[2], arg[3], arg[4]);
