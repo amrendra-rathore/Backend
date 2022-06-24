@@ -8,13 +8,18 @@ const permission = {
     delete: [],
   },
 };
+let output1;
 
 function hasPermission(moduleName, role, permissionType) {
-
-  if ((permission[moduleName].all.includes(role)) || (permission[moduleName][permissionType].includes(role))) {
-    console.log('True');
+  // let mod = 'moduleName' in permission;
+  if (output1 = moduleName in permission) {
+    if ((permission[moduleName].all.includes(role)) || (permission[moduleName][permissionType].includes(role))) {
+      console.log('True');
+    } else {
+      console.log('False');
+    }
   } else {
-    console.log('False');
+    console.log("Module not found");
   }
 }
 

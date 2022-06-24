@@ -30,7 +30,7 @@ let validateEmail = (email) => {
 // Function to validate Users in the above given array of objects.
 function validateUsers() {
   var invalid = 0, valid = 0;
-  users.map((x) => {
+  users.forEach((x) => {
     if (validateEmail(x.traineeEmail) && validateEmail(x.reviewerEmail) == true) {
       console.log("Trainee Email is " + x.traineeEmail);
       console.log("Reviewer Email is " + x.reviewerEmail);
@@ -45,5 +45,5 @@ function validateUsers() {
   console.log("Invalid User Count:" + invalid);
 }
 
-validateEmail(arg[2]);
+// validateEmail(arg[2]);
 validateUsers(users);
