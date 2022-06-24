@@ -1,13 +1,13 @@
-import {permission} from "./constants.js";
-// var arg = process.argv;
+import { permission } from "./constants.js";
 
 export default function hasPermission(moduleName, role, permissionType) {
-
-  if ((permission[moduleName].all.includes(role)) || (permission[moduleName][permissionType].includes(role))) {
-    console.log('True');
+  if (moduleName in permission) {
+    if ((permission[moduleName].all.includes(role)) || (permission[moduleName][permissionType].includes(role))) {
+      console.log('True');
+    } else {
+      console.log('False');
+    }
   } else {
-    console.log('False');
+    console.log("Module not found");
   }
 }
-
-// hasPermission(arg[2], arg[3], arg[4]);

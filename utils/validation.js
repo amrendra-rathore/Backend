@@ -1,12 +1,12 @@
 import validateEmail from "./helper.js";
-import {users} from '../extra/index.js';
+import { users } from '../extra/index.js';
 
 // var arg = process.argv;
 
 // Function to validate Users in the above given array of objects.
 export default function validateUsers() {
   var invalid = 0, valid = 0;
-  users.map((x) => {
+  users.forEach((x) => {
     if (validateEmail(x.traineeEmail) && validateEmail(x.reviewerEmail) == true) {
       console.log("Trainee Email is " + x.traineeEmail);
       console.log("Reviewer Email is " + x.reviewerEmail);
