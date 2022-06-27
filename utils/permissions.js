@@ -1,7 +1,7 @@
 import { permission } from "./constants.js";
 
 export default function hasPermission(moduleName, role, permissionType) {
-  if (moduleName in permission) {
+  if (Object.hasOwn(permission, moduleName)) {
     if ((permission[moduleName].all.includes(role)) || (permission[moduleName][permissionType].includes(role))) {
       console.log('True');
     } else {
