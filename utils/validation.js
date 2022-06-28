@@ -1,8 +1,6 @@
 import validateEmail from "./helper.js";
 import { users } from '../extra/index.js';
 
-// var arg = process.argv;
-
 // Function to validate Users in the above given array of objects.
 export default function validateUsers() {
   var invalid = 0, valid = 0;
@@ -20,6 +18,3 @@ export default function validateUsers() {
   console.log("Valid User Count:" + valid);
   console.log("Invalid User Count:" + invalid);
 }
-
-// validateEmail(arg[2]);
-// validateUsers(users);
