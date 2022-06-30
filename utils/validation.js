@@ -1,7 +1,5 @@
 import validateEmail from "./helper.js";
-import {users} from '../extra/index.js';
-
-// var arg = process.argv;
+import { users } from '../extra/index.js';
 
 // Function to validate Users in the above given array of objects.
 export default function validateUsers() {

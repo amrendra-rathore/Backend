@@ -25,6 +25,6 @@ diamond(8);
 //Prnints the equilateral triangles pattern
 equilateral(5);
 
-hasPermission('getUsers', 'trainer', 'write');
+hasPermission('getUsers', 'trainee', 'read');
 
 validateUsers(users);
