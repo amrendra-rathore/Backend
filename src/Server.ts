@@ -1,5 +1,4 @@
 import * as express from 'express';
-// import bodyParser from 'body-parser';
 import { default as notFound } from './libs/routes/notFoundRoute';
 import { default as errorHandler } from './libs/routes/errorHandler';
 
