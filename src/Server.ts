@@ -12,7 +12,7 @@ export default class Server {
     return this;
   }
   public setupRoutes()  {
-    this.app.get("/health-check", function(req , res)  {
+    this.app.get("/health-check", (req , res) => {
       res.send('I am OK');
     });
   }
