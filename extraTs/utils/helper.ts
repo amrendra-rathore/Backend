@@ -5,7 +5,6 @@ export default function validateEmail(email: string) {
   if (regex.test(email)) {
     return true;
   }
-  else {
-    return false;
-  }
+
+  return false;
 }

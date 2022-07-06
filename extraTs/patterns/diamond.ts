@@ -1,12 +1,12 @@
 // Run a loop row number of times for the pattern to be created.
 
-let str: string = '';
+let str = '';
 let i: number;
 let j: number;
 let k: number;
 
 export default function Diamond(size: number) {
-  if (size >= 2 && size <= 10) {  // Condition to check if the input argument is within the range.
+  if (size >= 2 && size <= 10) { // Condition to check if the input argument is within the range.
     for (i = 1; i <= size; i++) {
       for (j = 1; j <= size - i; j++) {
         str += ' ';
