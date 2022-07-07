@@ -15,7 +15,7 @@ export const users: Iusers[] = [
   {
     traineeEmail: 'trainee121@successive.tech',
     reviewerEmail: 'reviewer101@successive.tech',
-  },
+  }
 ];
 
 export const regex = /^([A-Za-z0-9_\-\.])+\@(successive.tech)$/;
