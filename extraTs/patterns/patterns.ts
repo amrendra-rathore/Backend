@@ -9,7 +9,7 @@ export default function equilateral(size: number) {
       for (j = size - 1; j >= i; j--) {  // For loop to print the spaces.
         str += ' ';
       }
-      for (k = 1; k <= i; k++) {       // For loop to print the "*"
+      for (k = 1; k <= i; k++) {  // For loop to print the "*"
         str += ' *';
       }
       str += '\n';

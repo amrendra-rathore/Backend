@@ -6,11 +6,10 @@ export default function validateUsers(users) {
   let valid: number = 0;
   users.map((x) => {
     if (validateEmail(x.traineeEmail) && validateEmail(x.reviewerEmail) === true) {
-      console.log('Trainee Email is ' + x.traineeEmail);
-      console.log('Reviewer Email is ' + x.reviewerEmail);
+      console.log('Trainee Email is' + x.traineeEmail);
+      console.log('Reviewer Email is' + x.reviewerEmail);
       valid++;
-    }
-    else {
+    } else {
       console.log('Invalid Email');
       invalid++;
     }

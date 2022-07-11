@@ -1,5 +1,6 @@
-import { config } from "dotenv";
-import { IConfig } from "./IConfig";
+import { config } from 'dotenv';
+import { IConfig } from './IConfig';
+
 config();
 const configurations: IConfig = {
   nodeEnv: process.env.NODE_ENV,
