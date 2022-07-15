@@ -8,6 +8,6 @@ const UserRouter = express.Router();
 UserRouter.get('/', checkSchema(validator.get as any), Controller.getTrainee);
 UserRouter.put('/', checkSchema(validator.update as any), Controller.putTrainee);
 UserRouter.post('/user', checkSchema(validator.create as any), Controller.postTrainee);
-UserRouter.delete('/user:id', checkSchema(validator.delete as any), Controller.deleteTrainee);
+UserRouter.delete('/user', checkSchema(validator.delete as any), Controller.deleteTrainee);
 
 export default UserRouter;
