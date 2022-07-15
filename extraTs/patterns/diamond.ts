@@ -1,6 +1,6 @@
 // Run a loop row number of times for the pattern to be created.
 
-let str: string = '';
+let str = '';
 let i: number;
 let j: number;
 let k: number;

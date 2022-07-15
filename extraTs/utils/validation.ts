@@ -2,8 +2,8 @@ import validateEmail from './helper.js';
 
 // Function to validate Users in the above given array of objects.
 export default function validateUsers(users) {
-  let invalid: number = 0;
-  let valid: number = 0;
+  let invalid = 0;
+  let valid = 0;
   users.map((x) => {
     if (validateEmail(x.traineeEmail) && validateEmail(x.reviewerEmail) === true) {
       console.log('Trainee Email is' + x.traineeEmail);
