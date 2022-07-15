@@ -1,4 +1,4 @@
-let str: string = '';
+let str = '';
 let i: number;
 let j: number;
 let k: number;

@@ -16,5 +16,7 @@
     "@typescript-eslint"
   ],
   "rules": {
+    "no-console": 0,
+    "no-loops/no-loops": 0
   }
 }

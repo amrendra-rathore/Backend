@@ -1,4 +1,4 @@
-import { diamond, equilateral } from './patterns/index.js';
+import { diamond, equilateral } from './patterns/index';
 import { hasPermission } from './utils/index';
 import validateUsers from './utils/validation';
 import { Iusers } from './interfaces';
@@ -18,6 +18,7 @@ export const users: Iusers[] = [
   }
 ];
 
+//eslint-disable-next-line
 export const regex = /^([A-Za-z0-9_\-\.])+\@(successive.tech)$/;
 
 // Prints the diamond pattern.

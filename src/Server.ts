@@ -2,13 +2,14 @@ import * as express from 'express';
 import notFound from './libs/routes/notFoundRoute';
 import errorHandler from './libs/routes/errorHandler';
 import router from './router';
+import { Express } from 'express-serve-static-core';
 
 export default class Server {
-  public app;
+  public app: Express;
 
-  private config;
+  private config: { port: any; };
 
-  constructor(config) {
+  constructor(config: any) {
     this.config = config;
     this.app = express();
   }
@@ -25,13 +26,13 @@ export default class Server {
   }
 
   public setupRoutes() {
-    this.app.get('/health-check', (req, res) => {
+    this.app.get('/health-check', (req: express.Request, res: express.Response) => {
       res.send('I am OK');
     });
 
     this.app.use('/api/', router);
 
-    this.app.use('/error', (req, res) => {
+    this.app.use('/error', (req: any, res: any) => {
       throw new Error();
     });
 
