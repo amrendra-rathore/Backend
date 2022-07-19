@@ -1,6 +1,7 @@
 class Controller {
   public getTrainee = (req, res) => {
     res.send('Got a GET request for the Home Page!');
+    console.log("WAR!!!");
   };
 
   public putTrainee = (req, res) => {
