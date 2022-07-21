@@ -13,7 +13,7 @@ const authMiddleWare = (moduleName: string, permissionType: string) => async (re
   const key = config.secret;
 
   try {
-    let token = req.headers.authorization;
+    const token = req.headers.authorization;
 
     // verify request has token
     if (!token) {
@@ -22,15 +22,13 @@ const authMiddleWare = (moduleName: string, permissionType: string) => async (re
 
     jwt.verify(token, key, (err: AnalyserNode, user: any) => {
       // console.log(user);
-      if(user){
-        if(hasPermission(moduleName, user.role, permissionType)){
+      if(user && hasPermission(moduleName, user.role, permissionType)){
           next();
         } else {
           return res
             .status(403)
             .send({success: false, message: "Error, Permission doesn't exist"});
         }
-      }
     })
   } catch (error) {
     if (error.name === 'TokenExpiredError') {
