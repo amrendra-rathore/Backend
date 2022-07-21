@@ -1,11 +1,13 @@
-import { permission } from './constants.js';
+import { permission } from './constants';
 // var arg = process.argv;
 
-export default function hasPermission(moduleName: string, role: string, permissionType: string) {
+export default function hasPermission(moduleName: string, role: string, permissionType: string) : boolean {
   if ((permission[moduleName].all.includes(role)) || (permission[moduleName][permissionType].includes(role))) {
-    console.log('True');
+    // console.log('True');
+    return true;
   } else {
-    console.log('False');
+    // console.log('False');
+    return false;
   }
 }
 
