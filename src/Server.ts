@@ -42,6 +42,7 @@ export default class Server {
 
   public run() {
     this.app.listen(this.config.port, () => {
+      console.log("Mongo service is now running...")
       console.log('Listening on port', (this.config.port));
     });
   }
