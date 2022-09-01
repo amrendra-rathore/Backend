@@ -53,6 +53,18 @@ const validator = {
         console.log('Data To Update: ', dataToUpdate);
        }
     }
+  },
+  login: {
+    userName: {
+        required: true,
+        string: true,
+        in: ['body']
+    },
+    password: {
+        required: true,
+        string: true,
+        in: ['body']
+    }
   }
 }
 
