@@ -64,38 +64,38 @@ export default class Controller {
         }
 
     }
-    async signup(req, res) {
-        try {
-            console.log("SignUp API");
-            const user = await UserSchema.find({ email: req.body.email });
-            const regex = /^([A-Za-z0-9_\-\.])+\@(successive.tech)$/;
-            const userDetails = new UserSchema(req.body)
-            if (regex.test(req.body.email)) {
-                if (user) {
-                    userDetails.save((err) => {
-                        if (!err) {
-                            console.log("No Error");
-                        }
-                        else {
-                            // console.log('Error during record insertion');
-                            res.json({ status: 200 });
-                        }
-                    })
-                    res.json({ status: 200, message: "User created successfully" });
-                }
-                else {
-                    return res.json({ status: 409, message: "User already exists" });
-                    console.log(res);
-                }
-            } else {
-                return res.json({ status: 404, message: "Invalid Email Address" });
-            }
-        }
-        catch (error) {
-            console.log("Something went wrong: Service: login -> ", error.statusCode);
-            throw new Error(error);
-        }
-    }
+    // async signup(req, res) {
+    //     try {
+    //         console.log("SignUp API");
+    //         const user = await UserSchema.find({ email: req.body.email });
+    //         const regex = /^([A-Za-z0-9_\-\.])+\@(successive.tech)$/;
+    //         const userDetails = new UserSchema(req.body)
+    //         if (regex.test(req.body.email)) {
+    //             if (user) {
+    //                 userDetails.save((err) => {
+    //                     if (!err) {
+    //                         console.log("No Error");
+    //                     }
+    //                     else {
+    //                         // console.log('Error during record insertion');
+    //                         res.json({ status: 200 });
+    //                     }
+    //                 })
+    //                 res.json({ status: 200, message: "User created successfully" });
+    //             }
+    //             else {
+    //                 return res.json({ status: 409, message: "User already exists" });
+    //                 console.log(res);
+    //             }
+    //         } else {
+    //             return res.json({ status: 404, message: "Invalid Email Address" });
+    //         }
+    //     }
+    //     catch (error) {
+    //         console.log("Something went wrong: Service: login -> ", error.statusCode);
+    //         throw new Error(error);
+    //     }
+    // }
     // public signup = (req, res) => {
     //     res.send('Got a SignUp request for a new user');
     // };
