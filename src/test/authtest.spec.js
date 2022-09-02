@@ -1,5 +1,5 @@
-import Controller from '../controllers/trainee/Controller';
-// const Controller = require('../controllers/trainee/Controller').default;
+// import Controller from '../controllers/trainee/Controller';
+const Controller = require('../controllers/trainee/Controller');
 const userObj = new Controller();
 
 const mongoose = require("mongoose");
@@ -43,7 +43,7 @@ describe("Authentication API", () => {
   //             // console.log(res);
   //             console.log(res.body);
   //             expect(200)
-  //             expect(res.body).not.to.be.empty;
+  //             // expect(res.body).not.to.be.empty;
   //             expect(res.body).to.be.an('object');
   //             done()
   //           })
@@ -57,14 +57,14 @@ describe("Authentication API", () => {
   //         .send({ username: "ashray", password: "CoviD@111234", phone: "7878676743", telephone: "01202368919", email: "ashray@successive" })
   //         .end((err, res) => {
   //           expect(409);
-  //           expect(res.body).not.to.be.empty;
+  //           // expect(res.body).not.to.be.empty;
   //           expect(res.body).to.be.an('object');
   //           done()
   //         })
   //     })
   //     it("Should not signup the user without a valid email", (done) => {
   //       chai
-  //         .request(server)
+  //         .request("http://localhost:9001")
   //         .post('/register')
   //         .send({ username: "ashray", password: "CoviD@111234", phone: "7878676743", telephone: "01202368919", email: "ashray@stech.com" })
   //         .end((err, res) => {
@@ -97,62 +97,50 @@ describe("Authentication API", () => {
           }
         );
         stubCase.restore();
-        // chai
-        //   .request(server)
-        //   .post('/login')
-        //   .send({ "email": 'ashray@successive.tech', "password": 'CoviD@111234' })
-        //   .end((err, res) => {
-        //     // console.log(res);
-        //     expect(res).have.status(200);
-        //     // res.should.have.status(200);
-        //     expect(res).not.to.be.empty;
-        //     expect(res).have.a('object');
-        //     done();
-        //   })
       });
     });
-    // describe("ERROR", () => {
-    //   it('Should not signin the user without email', (done) => {
-    //     const stubCase = sinon.stub(userObj, "login").returns({
-    //       status: 500,
-    //       message: "Authentication Fail"
-    //     });
-    //     request(
-    //       {
-    //         url: 'http://localhost:9000/api/user/login'
-    //       },
-    //       function (err, res, body) {
-    //         stubCase(0).should.have.status(500);
-    //         stubCase(0).should.have.a("object");
-    //         stubCase(0)
-    //           .should.have.property("message")
-    //           .eql("Authentication Fail");
-    //         done();
-    //       }
-    //     );
-    //     stubCase.restore();
-    //   })
-    //   it('Should not signin the user without correct password', (done) => {
-    //     const stubCase = sinon.stub(userObj, "login").returns({
-    //       status: 500,
-    //       message: "Authentication Fail"
-    //     });
-    //     request(
-    //       {
-    //         url: 'http://localhost:9000/api/user/login'
-    //       },
-    //       function (err, res, body) {
-    //         stubCase(0).should.have.status(500);
-    //         stubCase(0).should.have.a("object");
-    //         stubCase(0)
-    //           .should.have.property("message")
-    //           .eql("Authentication Fail");
-    //         done();
-    //       }
-    //     );
-    //     stubCase.restore();
-    //   })
-    // })
+    describe("ERROR", () => {
+      it('Should not signin the user without email', (done) => {
+        const stubCase = sinon.stub(userObj, "login").returns({
+          status: 500,
+          message: "Authentication Fail"
+        });
+        request(
+          {
+            url: 'http://localhost:9000/api/user/login'
+          },
+          function (err, res, body) {
+            stubCase(0).should.have.status(500);
+            stubCase(0).should.have.a("object");
+            stubCase(0)
+              .should.have.property("message")
+              .eql("Authentication Fail");
+            done();
+          }
+        );
+        stubCase.restore();
+      })
+      it('Should not signin the user without correct password', (done) => {
+        const stubCase = sinon.stub(userObj, "login").returns({
+          status: 500,
+          message: "Authentication Fail"
+        });
+        request(
+          {
+            url: 'http://localhost:9000/api/user/login'
+          },
+          function (err, res, body) {
+            stubCase(0).should.have.status(500);
+            stubCase(0).should.have.a("object");
+            stubCase(0)
+              .should.have.property("message")
+              .eql("Authentication Fail");
+            done();
+          }
+        );
+        stubCase.restore();
+      })
+    })
   });
   // Forget Password
 
