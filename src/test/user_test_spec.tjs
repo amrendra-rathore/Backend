@@ -1,0 +1,53 @@
+import chai from 'chai';
+import chaiHttp from "chai-http";
+import { response } from 'express';
+// import { Server } from '../Server';
+
+import app from 'express';
+import 'mocha';
+
+const token= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiVHJhaW5lZSIsImlhdCI6MTY1ODM4NDEzOX0._LT3KuOrW3di-JiI8v7kns0qptvFJ571mFtDMkvn0s8";
+
+// const assert = chai.assert;
+// const expect = chai.expect;
+const should = chai.should();
+
+chai.use(chaiHttp);
+
+// Test the /GET route
+describe('GET /', () => {
+    it('it should GET all the Users', (done) => {
+      chai
+          .request("http://localhost:9000/api/")
+          .get('/user/')
+          .set({ Authorization: `Bearer ${token}`})
+          .end((err, response) => {
+                response.body.should.be('string');
+            done();
+          });
+    });
+});
+
+
+// describe('GET API Request', () => {
+//   it('should return response on call', () => {
+//     return chai.request(app).get('/api/')
+//       .then(res => {
+//         chai.expect(res.text).to.eql("Got a GET request for the Home Page!");
+//       })
+//       .done();
+//   })
+// })
+
+// describe("RankingHolder", () => {
+//   describe("average", () => {
+//       context("when having multiple results", () => {
+//           it("should be something", () =>{
+//               // write first test here
+//           });
+//           it("should be something2", () =>{
+//               // write second test here
+//           });
+//       });
+//   });
+// });

@@ -1,8 +1,11 @@
-import * as express from 'express';
+// import * as express from 'express';
+const express = require("express");
+const router = express.Router();
+
 import UserRouter from './controllers/trainee/routes';
 
-const router = express.Router();
+// const router = express.Router();
 
 router.use('/user', UserRouter);
 
-export default router;
+module.exports = router;
